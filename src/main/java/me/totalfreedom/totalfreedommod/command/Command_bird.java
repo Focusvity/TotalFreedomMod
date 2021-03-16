@@ -1,14 +1,15 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.SplittableRandom;
 import me.totalfreedom.totalfreedommod.rank.Rank;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.SplittableRandom;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.ONLY_IN_GAME)
 @CommandParameters(description = "Spawns a random type of fish at your location.", usage = "/<command>")

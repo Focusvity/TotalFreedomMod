@@ -1,9 +1,5 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 import me.totalfreedom.totalfreedommod.player.FPlayer;
 import me.totalfreedom.totalfreedommod.punishments.Punishment;
 import me.totalfreedom.totalfreedommod.punishments.PunishmentType;
@@ -15,6 +11,11 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.BOTH)
 @CommandParameters(description = "Mutes a player with brute force.", usage = "/<command> <[-s | -q] <player> [reason] | list | purge | all>", aliases = "stfu")

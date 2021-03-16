@@ -1,8 +1,5 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 import me.totalfreedom.totalfreedommod.player.PlayerData;
 import me.totalfreedom.totalfreedommod.rank.Rank;
 import me.totalfreedom.totalfreedommod.util.FUtil;
@@ -12,6 +9,10 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.BOTH)
 @CommandParameters(description = "Manage notes for a player", usage = "/<command> <name> <list | add <note> | remove <id> | clear>")

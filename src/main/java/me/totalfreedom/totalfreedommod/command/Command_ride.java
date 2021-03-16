@@ -1,8 +1,6 @@
 package me.totalfreedom.totalfreedommod.command;
 
 import io.papermc.lib.PaperLib;
-import java.util.HashMap;
-import java.util.Map;
 import me.totalfreedom.totalfreedommod.player.FPlayer;
 import me.totalfreedom.totalfreedommod.player.PlayerData;
 import me.totalfreedom.totalfreedommod.rank.Rank;
@@ -12,6 +10,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.ONLY_IN_GAME)
 @CommandParameters(description = "Ride on the top of the specified player.", usage = "/<command> <playername | mode <normal | off | ask>>")

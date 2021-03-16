@@ -2,14 +2,6 @@ package me.totalfreedom.totalfreedommod.admin;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
 import me.totalfreedom.totalfreedommod.rank.Rank;
@@ -19,11 +11,16 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+
 public class AdminList extends FreedomService
 {
+
     public static final List<String> vanished = new ArrayList<>();
-    public final List<String> verifiedNoAdmin = new ArrayList<>();
-    public final Map<String, List<String>> verifiedNoAdminIps = Maps.newHashMap();
+    public final Map<String, List<String>> verifiedNoAdmin = Maps.newHashMap();
     private final Set<Admin> allAdmins = Sets.newHashSet(); // Includes disabled admins
     // Only active admins below
     private final Set<Admin> activeAdmins = Sets.newHashSet();
@@ -100,7 +97,7 @@ public class AdminList extends FreedomService
 
     public List<String> getActiveAdminNames()
     {
-        List<String> names = new ArrayList();
+        ArrayList names = new ArrayList();
         for (Admin admin : activeAdmins)
         {
             names.add(admin.getName());
@@ -115,7 +112,7 @@ public class AdminList extends FreedomService
             return true;
         }
 
-        Admin admin = getAdmin((Player)sender);
+        Admin admin = getAdmin((Player) sender);
 
         return admin != null && admin.isActive();
     }
@@ -147,7 +144,7 @@ public class AdminList extends FreedomService
     {
         if (sender instanceof Player)
         {
-            return getAdmin((Player)sender);
+            return getAdmin((Player) sender);
         }
 
         return getEntryByName(sender.getName());
@@ -240,8 +237,7 @@ public class AdminList extends FreedomService
 
     public boolean isVerifiedAdmin(Player player)
     {
-        // Fix of issue FS-33
-        return !verifiedNoAdmin.contains(player.getName()) || verifiedNoAdminIps.containsKey(player.getName()) && !verifiedNoAdminIps.get(player.getName()).contains(FUtil.getIp(player));
+        return verifiedNoAdmin.containsKey(player.getName()) && verifiedNoAdmin.get(player.getName()).contains(FUtil.getIp(player));
     }
 
     public boolean isIdentityMatched(Player player)
@@ -404,13 +400,8 @@ public class AdminList extends FreedomService
         return ipTable;
     }
 
-    public List<String> getVerifiedNoAdmin()
+    public Map<String, List<String>> getVerifiedNoAdmin()
     {
         return verifiedNoAdmin;
-    }
-
-    public Map<String, List<String>> getVerifiedNoAdminIps()
-    {
-        return verifiedNoAdminIps;
     }
 }

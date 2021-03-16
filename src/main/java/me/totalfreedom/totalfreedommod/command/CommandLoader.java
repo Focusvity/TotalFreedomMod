@@ -1,15 +1,18 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import me.totalfreedom.totalfreedommod.util.FLog;
 import org.reflections.Reflections;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+
 public class CommandLoader extends FreedomService
 {
+
     private final List<FreedomCommand> commands;
 
     public CommandLoader()
@@ -67,9 +70,9 @@ public class CommandLoader extends FreedomService
         {
             try
             {
-                add(commandClass.newInstance());
+                add(commandClass.getConstructor().newInstance());
             }
-            catch (InstantiationException | IllegalAccessException | ExceptionInInitializerError ex)
+            catch (NoSuchMethodException | InstantiationException | IllegalAccessException | ExceptionInInitializerError | InvocationTargetException ex)
             {
                 FLog.warning("Failed to register command: /" + commandClass.getSimpleName().replace("Command_", ""));
             }

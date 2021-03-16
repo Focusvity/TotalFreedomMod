@@ -1,11 +1,13 @@
 package me.totalfreedom.totalfreedommod.config;
 
-import java.io.File;
 import me.totalfreedom.totalfreedommod.TotalFreedomMod;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import java.io.File;
+
 public class YamlConfig extends YamlConfiguration
 {
+
     private final File file;
 
     public YamlConfig(TotalFreedomMod plugin, String name, boolean copyDefaults)

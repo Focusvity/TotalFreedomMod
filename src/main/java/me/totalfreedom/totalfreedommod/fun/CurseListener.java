@@ -1,17 +1,20 @@
 package me.totalfreedom.totalfreedommod.fun;
 
-import java.util.HashMap;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.player.PlayerResourcePackStatusEvent;
+
+import java.util.HashMap;
+
 import static org.bukkit.event.player.PlayerResourcePackStatusEvent.Status;
 
 public class CurseListener extends FreedomService
 {
-    public HashMap<Player, Player> cursedPlayers = new HashMap<Player, Player>();
+
+    public HashMap<Player, Player> cursedPlayers = new HashMap<>();
 
     @Override
     public void onStart()

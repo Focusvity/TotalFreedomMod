@@ -6,6 +6,7 @@ import org.json.simple.parser.ParseException;
 
 public class Response
 {
+
     private final int code;
     private final String message;
 
@@ -17,7 +18,7 @@ public class Response
 
     public JSONObject getJSONMessage() throws ParseException
     {
-        return (JSONObject)new JSONParser().parse(message);
+        return (JSONObject) new JSONParser().parse(message);
     }
 
     public int getCode()

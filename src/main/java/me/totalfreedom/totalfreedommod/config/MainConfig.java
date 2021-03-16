@@ -1,17 +1,18 @@
 package me.totalfreedom.totalfreedommod.config;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.EnumMap;
-import java.util.List;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import me.totalfreedom.totalfreedommod.TotalFreedomMod;
 import me.totalfreedom.totalfreedommod.util.FLog;
 import org.apache.commons.io.FileUtils;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.EnumMap;
+import java.util.List;
 
 public class MainConfig extends FreedomService
 {

@@ -5,13 +5,15 @@ import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.protection.managers.RegionManager;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
-import java.util.Map;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import org.bukkit.World;
 import org.bukkit.plugin.Plugin;
 
+import java.util.Map;
+
 public class WorldGuardBridge extends FreedomService
 {
+
     @Override
     public void onStart()
     {

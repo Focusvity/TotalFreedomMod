@@ -1,8 +1,5 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import me.totalfreedom.totalfreedommod.rank.Rank;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -11,10 +8,15 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 @CommandPermissions(level = Rank.OP, source = SourceType.BOTH)
 @CommandParameters(description = "See TotalFreedom's social media links.", usage = "/<command>", aliases = "link")
 public class Command_links extends FreedomCommand
 {
+
     @Override
     public boolean run(CommandSender sender, Player playerSender, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
@@ -32,7 +34,7 @@ public class Command_links extends FreedomCommand
                 {
                     continue;
                 }
-                String link = (String)values.get(key);
+                String link = (String) values.get(key);
                 lines.add(ChatColor.GOLD + "- " + key + ": " + ChatColor.AQUA + link);
             }
 

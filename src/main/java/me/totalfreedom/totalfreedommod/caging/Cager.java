@@ -1,7 +1,6 @@
 package me.totalfreedom.totalfreedommod.caging;
 
 import io.papermc.lib.PaperLib;
-import java.util.Objects;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import me.totalfreedom.totalfreedommod.player.FPlayer;
 import me.totalfreedom.totalfreedommod.util.FUtil;
@@ -16,8 +15,11 @@ import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+import java.util.Objects;
+
 public class Cager extends FreedomService
 {
+
     @Override
     public void onStart()
     {

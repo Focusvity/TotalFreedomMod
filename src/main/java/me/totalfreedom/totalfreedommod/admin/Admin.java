@@ -1,12 +1,5 @@
 package me.totalfreedom.totalfreedommod.admin;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import me.totalfreedom.totalfreedommod.LogViewer.LogsRegistrationMode;
 import me.totalfreedom.totalfreedommod.TotalFreedomMod;
 import me.totalfreedom.totalfreedommod.rank.Rank;
@@ -15,6 +8,10 @@ import me.totalfreedom.totalfreedommod.util.FUtil;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.*;
 
 public class Admin
 {
@@ -68,23 +65,19 @@ public class Admin
     @Override
     public String toString()
     {
-        final StringBuilder output = new StringBuilder();
-
-        output.append("Admin: ").append(name).append("\n")
-                .append("- IPs: ").append(StringUtils.join(ips, ", ")).append("\n")
-                .append("- Last Login: ").append(FUtil.dateToString(lastLogin)).append("\n")
-                .append("- Rank: ").append(rank.getName()).append("\n")
-                .append("- Is Active: ").append(active).append("\n")
-                .append("- Potion Spy: ").append(potionSpy).append("\n")
-                .append("- Admin Chat Format: ").append(acFormat).append("\n")
-                .append("- Pterodactyl ID: ").append(pteroID).append("\n");
-
-        return output.toString();
+        return "Admin: " + name + "\n" +
+                "- IPs: " + StringUtils.join(ips, ", ") + "\n" +
+                "- Last Login: " + FUtil.dateToString(lastLogin) + "\n" +
+                "- Rank: " + rank.getName() + "\n" +
+                "- Is Active: " + active + "\n" +
+                "- Potion Spy: " + potionSpy + "\n" +
+                "- Admin Chat Format: " + acFormat + "\n" +
+                "- Pterodactyl ID: " + pteroID + "\n";
     }
 
     public Map<String, Object> toSQLStorable()
     {
-        Map<String, Object> map = new HashMap<String, Object>()
+        return new HashMap<>()
         {{
             put("username", name);
             put("active", active);
@@ -96,7 +89,6 @@ public class Admin
             put("ac_format", acFormat);
             put("ptero_id", pteroID);
         }};
-        return map;
     }
 
     // Util IP methods

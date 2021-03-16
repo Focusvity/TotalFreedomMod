@@ -1,17 +1,5 @@
 package me.totalfreedom.totalfreedommod.bridge;
 
-import java.io.File;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.text.DecimalFormat;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
 import me.totalfreedom.totalfreedommod.player.PlayerData;
@@ -34,8 +22,14 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
+import java.io.File;
+import java.sql.*;
+import java.text.DecimalFormat;
+import java.util.*;
+
 public class CoreProtectBridge extends FreedomService
 {
+
     public static Map<Player, FUtil.PaginationList<String>> HISTORY_MAP = new HashMap<>();
     private final List<String> tables = Arrays.asList("co_sign", "co_session", "co_container", "co_block");
 
@@ -52,7 +46,7 @@ public class CoreProtectBridge extends FreedomService
     public static String getTimeAgo(int logTime, int currentTime)
     {
         StringBuilder message = new StringBuilder();
-        double timeSince = (double)currentTime - ((double)logTime + 0.0D);
+        double timeSince = (double) currentTime - ((double) logTime + 0.0D);
         timeSince /= 60.0D;
         if (timeSince < 60.0D)
         {
@@ -96,7 +90,7 @@ public class CoreProtectBridge extends FreedomService
             assert coreProtectPlugin != null;
             if (coreProtectPlugin instanceof CoreProtect)
             {
-                coreProtect = (CoreProtect)coreProtectPlugin;
+                coreProtect = (CoreProtect) coreProtectPlugin;
             }
         }
         catch (Exception ex)
@@ -344,7 +338,7 @@ public class CoreProtectBridge extends FreedomService
                                 st += "§m";
                             }
 
-                            int time = (int)(System.currentTimeMillis() / 1000L);
+                            int time = (int) (System.currentTimeMillis() / 1000L);
 
                             paged.add(ChatColor.GRAY + getTimeAgo(result.getTime(), time) + ChatColor.WHITE + " - " + net.md_5.bungee.api.ChatColor.of("#30ade4") +
                                     st + result.getPlayer() + ChatColor.WHITE + st + s + net.md_5.bungee.api.ChatColor.of("#30ade4") + st + bl.getMaterial().toString().toLowerCase());
@@ -435,7 +429,7 @@ public class CoreProtectBridge extends FreedomService
                                     st += "§m";
                                 }
 
-                                int time = (int)(System.currentTimeMillis() / 1000L);
+                                int time = (int) (System.currentTimeMillis() / 1000L);
 
                                 paged.add(ChatColor.GRAY + getTimeAgo(result.getTime(), time) + ChatColor.WHITE + " - " + net.md_5.bungee.api.ChatColor.of("#30ade4") +
                                         st + result.getPlayer() + ChatColor.WHITE + st + s + net.md_5.bungee.api.ChatColor.of("#30ade4") + st + bl.getMaterial().toString().toLowerCase());

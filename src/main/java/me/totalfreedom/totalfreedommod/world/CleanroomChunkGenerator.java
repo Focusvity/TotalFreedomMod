@@ -18,18 +18,21 @@
 
 package me.totalfreedom.totalfreedommod.world;
 
-import java.util.Arrays;
-import java.util.Random;
-import java.util.logging.Logger;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.generator.ChunkGenerator;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Arrays;
+import java.util.Random;
+import java.util.logging.Logger;
+
 import static java.lang.System.arraycopy;
 
 public class CleanroomChunkGenerator extends ChunkGenerator
 {
+
     private final Logger log = Logger.getLogger("Minecraft");
 
     private Material[] materials;

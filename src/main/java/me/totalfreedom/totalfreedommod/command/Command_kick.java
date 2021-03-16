@@ -16,6 +16,7 @@ import org.bukkit.entity.Player;
 @CommandParameters(description = "Kick the specified player.", usage = "/<command> <player> [reason] [-q]")
 public class Command_kick extends FreedomCommand
 {
+
     @Override
     public boolean run(CommandSender sender, Player playerSender, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {

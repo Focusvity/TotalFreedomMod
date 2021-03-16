@@ -1,6 +1,5 @@
 package me.totalfreedom.totalfreedommod.freeze;
 
-import java.util.Objects;
 import me.totalfreedom.totalfreedommod.player.FPlayer;
 import me.totalfreedom.totalfreedommod.util.FLog;
 import me.totalfreedom.totalfreedommod.util.FUtil;
@@ -9,6 +8,9 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
+
+import java.util.Objects;
+
 import static me.totalfreedom.totalfreedommod.TotalFreedomMod.plugin;
 import static me.totalfreedom.totalfreedommod.player.FPlayer.AUTO_PURGE_TICKS;
 

@@ -2,6 +2,7 @@ package me.totalfreedom.totalfreedommod.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -23,7 +24,7 @@ public class UUIDFetcher
             UUID uuid;
             String body = gson.toJson(name);
             URL url = new URL(PROFILE_URL);
-            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setUseCaches(false);

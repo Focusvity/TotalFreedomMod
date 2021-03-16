@@ -1,8 +1,5 @@
 package me.totalfreedom.totalfreedommod.fun;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
 import org.bukkit.GameMode;
@@ -15,8 +12,13 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class Landminer extends FreedomService
 {
+
     private final List<Landmine> landmines = new ArrayList<>();
 
     @Override
@@ -100,6 +102,7 @@ public class Landminer extends FreedomService
 
     public static class Landmine
     {
+
         private final Location location;
         private final Player planter;
         private final double radius;

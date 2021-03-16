@@ -1,11 +1,5 @@
 package me.totalfreedom.totalfreedommod.shop;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
 import me.totalfreedom.totalfreedommod.player.PlayerData;
@@ -28,8 +22,11 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
+import java.util.*;
+
 public class Shop extends FreedomService
 {
+
     public final int coinsPerReactionWin = ConfigEntry.SHOP_REACTIONS_COINS_PER_WIN.getInteger();
     public final String prefix = ChatColor.DARK_GRAY + "[" + ChatColor.YELLOW + "Reaction" + ChatColor.DARK_GRAY + "] ";
     private final String LOGIN_MESSAGE_GUI_TITLE = ChatColor.DARK_GREEN + ChatColor.BOLD.toString() + "Login Messages";
@@ -349,7 +346,7 @@ public class Shop extends FreedomService
             return;
         }
 
-        Player player = (Player)event.getWhoClicked();
+        Player player = (Player) event.getWhoClicked();
         PlayerData playerData = plugin.pl.getData(player);
         int price = shopItem.getCost();
         int coins = playerData.getCoins();
@@ -390,7 +387,7 @@ public class Shop extends FreedomService
 
         int slot = event.getSlot();
 
-        Player player = (Player)event.getWhoClicked();
+        Player player = (Player) event.getWhoClicked();
         PlayerData data = plugin.pl.getData(player);
 
         if (slot == 35)

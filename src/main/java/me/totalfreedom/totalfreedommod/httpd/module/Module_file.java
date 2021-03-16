@@ -1,21 +1,18 @@
 package me.totalfreedom.totalfreedommod.httpd.module;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.StringTokenizer;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
 import me.totalfreedom.totalfreedommod.httpd.HTTPDaemon;
 import me.totalfreedom.totalfreedommod.httpd.NanoHTTPD;
 import me.totalfreedom.totalfreedommod.httpd.NanoHTTPD.Response;
 import org.apache.commons.lang3.StringUtils;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 
 /*
  * This class was adapted from https://github.com/NanoHttpd/nanohttpd/blob/master/webserver/src/main/java/fi/iki/elonen/SimpleWebServer.java
@@ -84,13 +81,7 @@ public class Module_file extends HTTPDModule
             }
             else
             {
-                try
-                {
-                    newUri.append(URLEncoder.encode(tok, "UTF-8"));
-                }
-                catch (UnsupportedEncodingException ignored)
-                {
-                }
+                newUri.append(URLEncoder.encode(tok, StandardCharsets.UTF_8));
             }
         }
         return newUri.toString();
@@ -255,7 +246,7 @@ public class Module_file extends HTTPDModule
                             @Override
                             public int available()
                             {
-                                return (int)dataLen;
+                                return (int) dataLen;
                             }
                         };
                         //noinspection ResultOfMethodCallIgnored

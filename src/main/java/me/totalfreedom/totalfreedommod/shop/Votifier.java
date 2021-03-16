@@ -13,6 +13,7 @@ import org.bukkit.event.EventPriority;
 
 public class Votifier extends FreedomService
 {
+
     @Override
     public void onStart()
     {

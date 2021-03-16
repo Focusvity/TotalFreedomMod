@@ -1,13 +1,15 @@
 package me.totalfreedom.totalfreedommod.util;
 
-import java.util.Arrays;
-import java.util.List;
 import org.bukkit.Material;
 import org.bukkit.block.Biome;
 import org.bukkit.entity.EntityType;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Groups
 {
+
     public static final List<Material> WOOL_COLORS = Arrays.asList(
             Material.WHITE_WOOL,
             Material.RED_WOOL,

@@ -1,13 +1,14 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.Collections;
-import java.util.List;
 import me.totalfreedom.totalfreedommod.rank.Rank;
 import me.totalfreedom.totalfreedommod.util.FUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.Collections;
+import java.util.List;
 
 @CommandPermissions(level = Rank.SENIOR_ADMIN, source = SourceType.ONLY_IN_GAME)
 @CommandParameters(description = "Curse someone - sends a cursed texture pack to the specified player.", usage = "/<command> <player>")

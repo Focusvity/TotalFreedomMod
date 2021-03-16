@@ -7,6 +7,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class MP44 extends FreedomService
 {
+
     @Override
     public void onStart()
     {

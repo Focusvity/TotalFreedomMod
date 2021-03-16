@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 
 public abstract class CustomWorld extends FreedomService
 {
+
     private final String name;
     //
     private World world;

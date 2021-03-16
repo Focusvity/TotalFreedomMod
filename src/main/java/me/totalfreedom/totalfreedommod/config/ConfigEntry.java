@@ -1,7 +1,8 @@
 package me.totalfreedom.totalfreedommod.config;
 
-import java.util.List;
 import me.totalfreedom.totalfreedommod.TotalFreedomMod;
+
+import java.util.List;
 
 
 public enum ConfigEntry
@@ -240,7 +241,7 @@ public enum ConfigEntry
     @SuppressWarnings("unchecked")
     public List<String> getStringList()
     {
-        return (List<String>)getList();
+        return (List<String>) getList();
     }
 
     private MainConfig getConfig()

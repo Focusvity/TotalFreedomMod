@@ -1,7 +1,5 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.Arrays;
-import java.util.List;
 import me.totalfreedom.totalfreedommod.player.FPlayer;
 import me.totalfreedom.totalfreedommod.player.PlayerData;
 import me.totalfreedom.totalfreedommod.rank.Rank;
@@ -13,6 +11,9 @@ import org.bukkit.Color;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.Arrays;
+import java.util.List;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.BOTH)
 @CommandParameters(description = "Allows you to set your own prefix.", usage = "/<command> [-s[ave]] <set <tag..> | list | gradient <hex> <hex> <tag..> | off | clear <player> | clearall>")

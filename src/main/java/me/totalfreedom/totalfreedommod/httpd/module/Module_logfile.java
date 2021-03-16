@@ -1,10 +1,5 @@
 package me.totalfreedom.totalfreedommod.httpd.module;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
 import me.totalfreedom.totalfreedommod.admin.Admin;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
 import me.totalfreedom.totalfreedommod.httpd.HTMLGenerationTools;
@@ -14,8 +9,14 @@ import me.totalfreedom.totalfreedommod.httpd.NanoHTTPD;
 import me.totalfreedom.totalfreedommod.httpd.NanoHTTPD.Response;
 import me.totalfreedom.totalfreedommod.util.FLog;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringEscapeUtils;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.lang.StringUtils;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
 
 public class Module_logfile extends HTTPDModule
 {
@@ -86,7 +87,7 @@ public class Module_logfile extends HTTPDModule
                     final List<String> LogFilesFormatted = new ArrayList<>();
                     for (File logfile : LogFiles)
                     {
-                        String filename = StringEscapeUtils.escapeHtml4(logfile.getName());
+                        String filename = StringEscapeUtils.escapeHtml(logfile.getName());
 
                         LogFilesFormatted.add("<li><a href=\"/logfile/download?logFileName=" + filename + "\">" + filename + "</a></li>");
 
@@ -202,6 +203,7 @@ public class Module_logfile extends HTTPDModule
 
     private static class LogFileTransferException extends Exception
     {
+
         public LogFileTransferException(String string)
         {
             super(string);

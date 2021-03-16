@@ -10,6 +10,7 @@ import org.bukkit.plugin.Plugin;
 
 public class LibsDisguisesBridge extends FreedomService
 {
+
     private LibsDisguises libsDisguisesPlugin = null;
 
     @Override
@@ -33,7 +34,7 @@ public class LibsDisguisesBridge extends FreedomService
                 {
                     if (libsDisguises instanceof LibsDisguises)
                     {
-                        libsDisguisesPlugin = (LibsDisguises)libsDisguises;
+                        libsDisguisesPlugin = (LibsDisguises) libsDisguises;
                     }
                 }
             }

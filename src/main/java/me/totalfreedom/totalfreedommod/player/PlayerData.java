@@ -1,12 +1,6 @@
 package me.totalfreedom.totalfreedommod.player;
 
 import com.google.common.collect.Lists;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import me.totalfreedom.totalfreedommod.TotalFreedomMod;
 import me.totalfreedom.totalfreedommod.shop.ShopItem;
 import me.totalfreedom.totalfreedommod.util.FLog;
@@ -15,8 +9,16 @@ import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class PlayerData
 {
+
     private final List<String> ips = Lists.newArrayList();
     private final List<String> notes = Lists.newArrayList();
     private final List<String> backupCodes = Lists.newArrayList();
@@ -230,7 +232,7 @@ public class PlayerData
 
     public Map<String, Object> toSQLStorable()
     {
-        return new HashMap<String, Object>()
+        return new HashMap<>()
         {{
             put("username", name);
             put("ips", FUtil.listToString(ips));

@@ -1,7 +1,5 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.HashMap;
-import java.util.Map;
 import me.totalfreedom.totalfreedommod.rank.Rank;
 import me.totalfreedom.totalfreedommod.util.FUtil;
 import org.apache.commons.lang.StringUtils;
@@ -11,10 +9,14 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.BOTH)
 @CommandParameters(description = "Kicks everyone and stops the server.", usage = "/<command> [reason]")
 public class Command_stop extends FreedomCommand
 {
+
     private static final Map<CommandSender, String> STOP_CONFIRM = new HashMap<>();
 
     @Override

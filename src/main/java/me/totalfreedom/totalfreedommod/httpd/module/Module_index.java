@@ -1,11 +1,12 @@
 package me.totalfreedom.totalfreedommod.httpd.module;
 
-import java.util.Set;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
 import me.totalfreedom.totalfreedommod.httpd.HTMLGenerationTools;
 import me.totalfreedom.totalfreedommod.httpd.HTTPDPageBuilder;
 import me.totalfreedom.totalfreedommod.httpd.NanoHTTPD;
 import org.reflections.Reflections;
+
+import java.util.Set;
 
 public class Module_index extends HTTPDModule
 {

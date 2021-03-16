@@ -12,6 +12,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.weather.ThunderChangeEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
+
 import static me.totalfreedom.totalfreedommod.util.FUtil.playerMsg;
 
 public class WorldManager extends FreedomService

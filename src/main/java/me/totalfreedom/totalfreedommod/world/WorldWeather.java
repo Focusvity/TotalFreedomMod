@@ -1,9 +1,10 @@
 package me.totalfreedom.totalfreedommod.world;
 
-import java.util.Arrays;
-import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.World;
+
+import java.util.Arrays;
+import java.util.List;
 
 public enum WorldWeather
 {

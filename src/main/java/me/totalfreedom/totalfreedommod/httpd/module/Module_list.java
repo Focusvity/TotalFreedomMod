@@ -1,6 +1,5 @@
 package me.totalfreedom.totalfreedommod.httpd.module;
 
-import java.util.Collection;
 import me.totalfreedom.totalfreedommod.admin.Admin;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
 import me.totalfreedom.totalfreedommod.httpd.NanoHTTPD;
@@ -9,6 +8,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+
+import java.util.Collection;
 
 public class Module_list extends HTTPDModule
 {

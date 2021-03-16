@@ -1,7 +1,5 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.ArrayList;
-import java.util.List;
 import me.totalfreedom.totalfreedommod.rank.Rank;
 import me.totalfreedom.totalfreedommod.util.FUtil;
 import me.totalfreedom.totalfreedommod.util.Groups;
@@ -16,6 +14,9 @@ import org.bukkit.block.data.Waterlogged;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.BOTH)
 @CommandParameters(description = "Remove all blocks of a certain type in the radius of certain players.", usage = "/<command> <block> [radius (default=50)] [player]")
@@ -39,7 +40,7 @@ public class Command_ro extends FreedomCommand
                     {
                         if (fromMaterial.equals(Material.WATER) && data instanceof Waterlogged)
                         {
-                            Waterlogged waterloggedData = (Waterlogged)data;
+                            Waterlogged waterloggedData = (Waterlogged) data;
                             if (waterloggedData.isWaterlogged())
                             {
                                 waterloggedData.setWaterlogged(false);

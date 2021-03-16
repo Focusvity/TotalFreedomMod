@@ -1,7 +1,5 @@
 package me.totalfreedom.totalfreedommod.player;
 
-import java.util.ArrayList;
-import java.util.List;
 import me.totalfreedom.totalfreedommod.TotalFreedomMod;
 import me.totalfreedom.totalfreedommod.caging.CageData;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
@@ -16,8 +14,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FPlayer
 {
+
     public static final long AUTO_PURGE_TICKS = 5L * 60L * 20L;
 
 

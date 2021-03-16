@@ -1,13 +1,14 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.ArrayList;
-import java.util.List;
 import me.totalfreedom.totalfreedommod.rank.Rank;
 import me.totalfreedom.totalfreedommod.util.FUtil;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.BOTH, cooldown = 5)
 @CommandParameters(description = "OP a player", usage = "/<command> <partialname>")
@@ -41,6 +42,7 @@ public class Command_op extends FreedomCommand
                     matchedPlayerNames.add(player.getName());
                     player.setOp(true);
                     player.sendMessage(FreedomCommand.YOU_ARE_OP);
+                    plugin.pem.setPermissions(player);
                 }
             }
         }

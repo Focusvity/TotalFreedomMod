@@ -1,12 +1,13 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.Objects;
 import me.totalfreedom.totalfreedommod.rank.Rank;
 import me.totalfreedom.totalfreedommod.util.FUtil;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.Objects;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.BOTH)
 @CommandParameters(description = "Manage operators", usage = "/<command> <count | purge>")

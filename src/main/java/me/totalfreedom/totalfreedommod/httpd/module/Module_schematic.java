@@ -2,15 +2,6 @@ package me.totalfreedom.totalfreedommod.httpd.module;
 
 import com.sk89q.worldedit.extent.clipboard.io.ClipboardFormat;
 import com.sk89q.worldedit.extent.clipboard.io.ClipboardFormats;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.regex.Pattern;
 import me.totalfreedom.totalfreedommod.admin.Admin;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
 import me.totalfreedom.totalfreedommod.httpd.HTMLGenerationTools;
@@ -22,8 +13,14 @@ import me.totalfreedom.totalfreedommod.httpd.NanoHTTPD.Response;
 import me.totalfreedom.totalfreedommod.player.PlayerData;
 import me.totalfreedom.totalfreedommod.util.FLog;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringEscapeUtils;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.lang.StringUtils;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.*;
+import java.util.regex.Pattern;
 
 public class Module_schematic extends HTTPDModule
 {
@@ -93,7 +90,7 @@ public class Module_schematic extends HTTPDModule
                 final List<String> schematicsFormatted = new ArrayList<>();
                 for (File schematic : schematics)
                 {
-                    String filename = StringEscapeUtils.escapeHtml4(schematic.getName());
+                    String filename = StringEscapeUtils.escapeHtml(schematic.getName());
 
                     if (SCHEMATIC_FILENAME_LC.matcher(filename.trim().toLowerCase()).find())
                     {

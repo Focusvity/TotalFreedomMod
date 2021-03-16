@@ -1,6 +1,5 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.Objects;
 import me.totalfreedom.totalfreedommod.admin.Admin;
 import me.totalfreedom.totalfreedommod.banning.Ban;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
@@ -18,6 +17,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
+
+import java.util.Objects;
 
 @CommandPermissions(level = Rank.SENIOR_ADMIN, source = SourceType.ONLY_CONSOLE, blockHostConsole = true)
 @CommandParameters(description = "Sends the specified player to their doom.", usage = "/<command> <playername> [reason]")

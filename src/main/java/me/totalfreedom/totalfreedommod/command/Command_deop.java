@@ -1,7 +1,5 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.ArrayList;
-import java.util.List;
 import me.totalfreedom.totalfreedommod.rank.Rank;
 import me.totalfreedom.totalfreedommod.util.FUtil;
 import org.apache.commons.lang.StringUtils;
@@ -9,10 +7,14 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.BOTH)
 @CommandParameters(description = "Deop a player", usage = "/<command> <partialname>")
 public class Command_deop extends FreedomCommand
 {
+
     @Override
     public boolean run(CommandSender sender, Player playerSender, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {

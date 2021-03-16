@@ -1,7 +1,5 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.Collections;
-import java.util.List;
 import me.totalfreedom.totalfreedommod.rank.Rank;
 import me.totalfreedom.totalfreedommod.util.FUtil;
 import org.bukkit.ChatColor;
@@ -11,10 +9,14 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.Collections;
+import java.util.List;
+
 @CommandPermissions(level = Rank.SENIOR_ADMIN, source = SourceType.BOTH)
 @CommandParameters(description = "Sends a guardian particle effect with an enderman scream to the specified player.", usage = "/<command> <player>")
 public class Command_scare extends FreedomCommand
 {
+
     @Override
     public boolean run(CommandSender sender, Player playerSender, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {

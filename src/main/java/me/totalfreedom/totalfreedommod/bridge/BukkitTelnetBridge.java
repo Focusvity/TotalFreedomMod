@@ -1,8 +1,5 @@
 package me.totalfreedom.totalfreedommod.bridge;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import me.totalfreedom.bukkittelnet.BukkitTelnet;
 import me.totalfreedom.bukkittelnet.api.TelnetCommandEvent;
 import me.totalfreedom.bukkittelnet.api.TelnetPreLoginEvent;
@@ -16,6 +13,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.plugin.Plugin;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class BukkitTelnetBridge extends FreedomService
 {
@@ -105,7 +106,7 @@ public class BukkitTelnetBridge extends FreedomService
                 {
                     if (bukkitTelnet instanceof BukkitTelnet)
                     {
-                        bukkitTelnetPlugin = (BukkitTelnet)bukkitTelnet;
+                        bukkitTelnetPlugin = (BukkitTelnet) bukkitTelnet;
                     }
                 }
             }

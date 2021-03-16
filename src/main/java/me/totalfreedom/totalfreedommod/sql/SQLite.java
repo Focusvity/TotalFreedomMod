@@ -1,12 +1,5 @@
 package me.totalfreedom.totalfreedommod.sql;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.text.MessageFormat;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import me.totalfreedom.totalfreedommod.admin.Admin;
 import me.totalfreedom.totalfreedommod.banning.Ban;
@@ -14,8 +7,12 @@ import me.totalfreedom.totalfreedommod.player.PlayerData;
 import me.totalfreedom.totalfreedommod.util.FLog;
 import me.totalfreedom.totalfreedommod.util.FUtil;
 
+import java.sql.*;
+import java.text.MessageFormat;
+
 public class SQLite extends FreedomService
 {
+
     private final String FILE_NAME = "database.db";
 
     private Connection connection;
@@ -200,22 +197,22 @@ public class SQLite extends FreedomService
         }
         else if (value.getClass().equals(String.class))
         {
-            String v = (String)value;
+            String v = (String) value;
             statement.setString(index, v);
         }
         else if (value.getClass().equals(Integer.class))
         {
-            int v = (int)value;
+            int v = (int) value;
             statement.setInt(index, v);
         }
         else if (value.getClass().equals(Boolean.class))
         {
-            boolean v = (boolean)value;
+            boolean v = (boolean) value;
             statement.setBoolean(index, v);
         }
         else if (value.getClass().equals(Long.class))
         {
-            long v = (long)value;
+            long v = (long) value;
             statement.setLong(index, v);
         }
         return statement;

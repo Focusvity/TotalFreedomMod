@@ -1,5 +1,14 @@
 package me.totalfreedom.totalfreedommod.httpd;
 
+import me.totalfreedom.totalfreedommod.FreedomService;
+import me.totalfreedom.totalfreedommod.config.ConfigEntry;
+import me.totalfreedom.totalfreedommod.httpd.NanoHTTPD.Response;
+import me.totalfreedom.totalfreedommod.httpd.module.*;
+import me.totalfreedom.totalfreedommod.util.FLog;
+import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.exception.ExceptionUtils;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -7,27 +16,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import me.totalfreedom.totalfreedommod.FreedomService;
-import me.totalfreedom.totalfreedommod.config.ConfigEntry;
-import me.totalfreedom.totalfreedommod.httpd.NanoHTTPD.Response;
-import me.totalfreedom.totalfreedommod.httpd.module.HTTPDModule;
-import me.totalfreedom.totalfreedommod.httpd.module.Module_activitylog;
-import me.totalfreedom.totalfreedommod.httpd.module.Module_admins;
-import me.totalfreedom.totalfreedommod.httpd.module.Module_bans;
-import me.totalfreedom.totalfreedommod.httpd.module.Module_file;
-import me.totalfreedom.totalfreedommod.httpd.module.Module_help;
-import me.totalfreedom.totalfreedommod.httpd.module.Module_indefbans;
-import me.totalfreedom.totalfreedommod.httpd.module.Module_index;
-import me.totalfreedom.totalfreedommod.httpd.module.Module_list;
-import me.totalfreedom.totalfreedommod.httpd.module.Module_logfile;
-import me.totalfreedom.totalfreedommod.httpd.module.Module_logs;
-import me.totalfreedom.totalfreedommod.httpd.module.Module_players;
-import me.totalfreedom.totalfreedommod.httpd.module.Module_punishments;
-import me.totalfreedom.totalfreedommod.httpd.module.Module_schematic;
-import me.totalfreedom.totalfreedommod.util.FLog;
-import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.exception.ExceptionUtils;
 
 public class HTTPDaemon extends FreedomService
 {
@@ -142,11 +130,12 @@ public class HTTPDaemon extends FreedomService
 
     private class HTTPD extends NanoHTTPD
     {
+
         private HTTPD(int port)
         {
             super(port);
         }
-        
+
         @Override
         public Response serve(HTTPSession session)
         {

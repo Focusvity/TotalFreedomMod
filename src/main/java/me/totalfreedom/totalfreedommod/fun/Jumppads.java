@@ -1,9 +1,6 @@
 package me.totalfreedom.totalfreedommod.fun;
 
 import com.google.common.collect.Maps;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import me.totalfreedom.totalfreedommod.util.Groups;
 import org.bukkit.block.Block;
@@ -12,6 +9,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class Jumppads extends FreedomService
 {

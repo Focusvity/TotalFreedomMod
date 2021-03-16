@@ -1,20 +1,15 @@
 package me.totalfreedom.totalfreedommod.banning;
 
 import com.google.common.collect.Lists;
-import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
 import me.totalfreedom.totalfreedommod.util.FUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.*;
 
 public class Ban
 {
@@ -233,7 +228,7 @@ public class Ban
             return false;
         }
 
-        final Ban ban = (Ban)object;
+        final Ban ban = (Ban) object;
         if (hasIps() != ban.hasIps()
                 || hasUsername() != ban.hasUsername())
         {

@@ -2,8 +2,6 @@ package me.totalfreedom.totalfreedommod.banning;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Sets;
-import java.util.Set;
-import java.util.UUID;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
 import me.totalfreedom.totalfreedommod.config.YamlConfig;
@@ -14,6 +12,9 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.player.PlayerLoginEvent;
+
+import java.util.Set;
+import java.util.UUID;
 
 public class IndefiniteBanList extends FreedomService
 {

@@ -1,8 +1,5 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 import me.totalfreedom.totalfreedommod.banning.Ban;
 import me.totalfreedom.totalfreedommod.player.PlayerData;
 import me.totalfreedom.totalfreedommod.punishments.Punishment;
@@ -15,6 +12,10 @@ import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 @CommandPermissions(level = Rank.ADMIN, source = SourceType.BOTH, blockHostConsole = true)
 @CommandParameters(description = "Temporarily bans a player for five minutes.", usage = "/<command> [-q] <username> [reason]", aliases = "noob")

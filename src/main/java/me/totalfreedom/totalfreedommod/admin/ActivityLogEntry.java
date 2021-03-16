@@ -1,14 +1,15 @@
 package me.totalfreedom.totalfreedommod.admin;
 
 import com.google.common.collect.Lists;
-import java.time.Instant;
-import java.util.Date;
-import java.util.List;
 import me.totalfreedom.totalfreedommod.config.IConfig;
 import me.totalfreedom.totalfreedommod.util.FUtil;
 import org.apache.commons.lang.Validate;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
+
+import java.time.Instant;
+import java.util.Date;
+import java.util.List;
 
 public class ActivityLogEntry implements IConfig
 {
@@ -74,10 +75,11 @@ public class ActivityLogEntry implements IConfig
     {
         // Fix of Array index out of bonds issue: FS-131
         String lastLoginString;
-        if(timestamps.size() > 1)
+        if (timestamps.size() > 1)
         {
             lastLoginString = timestamps.get(timestamps.size() - 1);
-        }else
+        }
+        else
         {
             lastLoginString = timestamps.get(0);
         }

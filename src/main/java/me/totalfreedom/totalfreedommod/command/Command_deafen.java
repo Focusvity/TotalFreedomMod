@@ -1,6 +1,5 @@
 package me.totalfreedom.totalfreedommod.command;
 
-import java.util.SplittableRandom;
 import me.totalfreedom.totalfreedommod.rank.Rank;
 import org.bukkit.Location;
 import org.bukkit.Sound;
@@ -8,6 +7,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
+
+import java.util.SplittableRandom;
 
 @CommandPermissions(level = Rank.OP, source = SourceType.ONLY_IN_GAME)
 @CommandParameters(description = "Makes random sounds.", usage = "/<command>")
@@ -33,7 +34,7 @@ public class Command_deafen extends FreedomCommand
         {
             for (double percent = 0.0; percent <= 1.0; percent += (1.0 / STEPS))
             {
-                final float pitch = (float)(percent * 2.0);
+                final float pitch = (float) (percent * 2.0);
 
                 new BukkitRunnable()
                 {

@@ -1,13 +1,6 @@
 package me.totalfreedom.totalfreedommod.player;
 
 import com.google.common.collect.Maps;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import me.totalfreedom.totalfreedommod.admin.Admin;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
@@ -16,6 +9,10 @@ import me.totalfreedom.totalfreedommod.util.FLog;
 import me.totalfreedom.totalfreedommod.util.FUtil;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.*;
 
 public class PlayerList extends FreedomService
 {

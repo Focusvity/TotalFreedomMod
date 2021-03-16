@@ -1,13 +1,15 @@
 package me.totalfreedom.totalfreedommod.httpd;
 
-import java.lang.reflect.Constructor;
 import me.totalfreedom.totalfreedommod.TotalFreedomMod;
 import me.totalfreedom.totalfreedommod.httpd.module.HTTPDModule;
 import me.totalfreedom.totalfreedommod.util.FLog;
 import org.bukkit.Bukkit;
 
+import java.lang.reflect.Constructor;
+
 public abstract class ModuleExecutable
 {
+
     private final boolean async;
 
     public ModuleExecutable(boolean async)

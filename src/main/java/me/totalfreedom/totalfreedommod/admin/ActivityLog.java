@@ -1,7 +1,6 @@
 package me.totalfreedom.totalfreedommod.admin;
 
 import com.google.common.collect.Maps;
-import java.util.Map;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import me.totalfreedom.totalfreedommod.config.YamlConfig;
 import me.totalfreedom.totalfreedommod.util.FLog;
@@ -13,6 +12,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+
+import java.util.Map;
 
 public class ActivityLog extends FreedomService
 {
@@ -99,7 +100,7 @@ public class ActivityLog extends FreedomService
     {
         if (sender instanceof Player)
         {
-            return getActivityLog((Player)sender);
+            return getActivityLog((Player) sender);
         }
 
         return getEntryByName(sender.getName());

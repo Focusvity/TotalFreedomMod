@@ -2,6 +2,11 @@ package me.totalfreedom.totalfreedommod.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import me.totalfreedom.totalfreedommod.TotalFreedomMod;
+import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.scheduler.BukkitRunnable;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -11,10 +16,6 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.UUID;
-import me.totalfreedom.totalfreedommod.TotalFreedomMod;
-import org.bukkit.ChatColor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.scheduler.BukkitRunnable;
 
 public class History
 {
@@ -39,7 +40,7 @@ public class History
                         //TODO: fix the stupid api on how it's not working name histories
                         //URL url = new URL("https://api.ashcon.app/mojang/v2/user/" + compactUuid);
                         URL url = new URL("https://api.mojang.com/user/profiles/" + compactUuid + "/names");
-                        HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                         //conn.setRequestProperty("User-Agent", "");
                         BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                         FName[] oldNames = gson.fromJson(reader, FName[].class);
@@ -85,6 +86,7 @@ public class History
 
     private static class FName implements Comparable<FName>
     {
+
         private final String name;
         private final long changedToAt;
 

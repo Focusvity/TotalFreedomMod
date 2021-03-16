@@ -45,7 +45,7 @@ public class EssentialsBridge extends FreedomService
                 assert essentials != null;
                 if (essentials instanceof Essentials)
                 {
-                    essentialsPlugin = (Essentials)essentials;
+                    essentialsPlugin = (Essentials) essentials;
                 }
             }
             catch (Exception ex)
@@ -147,14 +147,14 @@ public class EssentialsBridge extends FreedomService
         Player refreshPlayer = null;
         Inventory inventory = event.getView().getTopInventory();
         InventoryType inventoryType = inventory.getType();
-        Player player = (Player)event.getWhoClicked();
+        Player player = (Player) event.getWhoClicked();
         FPlayer fPlayer = plugin.pl.getPlayer(player);
         if (inventoryType == InventoryType.PLAYER && fPlayer.isInvSee())
         {
             final InventoryHolder inventoryHolder = inventory.getHolder();
             if (inventoryHolder instanceof HumanEntity)
             {
-                Player invOwner = (Player)inventoryHolder;
+                Player invOwner = (Player) inventoryHolder;
                 Rank recieverRank = plugin.rm.getRank(player);
                 Rank playerRank = plugin.rm.getRank(invOwner);
                 if (playerRank.ordinal() >= recieverRank.ordinal() || !invOwner.isOnline())
@@ -184,7 +184,7 @@ public class EssentialsBridge extends FreedomService
         Player refreshPlayer = null;
         Inventory inventory = event.getView().getTopInventory();
         InventoryType inventoryType = inventory.getType();
-        Player player = (Player)event.getPlayer();
+        Player player = (Player) event.getPlayer();
         FPlayer fPlayer = plugin.pl.getPlayer(player);
         if (inventoryType == InventoryType.PLAYER && fPlayer.isInvSee())
         {

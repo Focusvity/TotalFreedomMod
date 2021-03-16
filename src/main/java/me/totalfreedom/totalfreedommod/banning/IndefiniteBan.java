@@ -1,14 +1,16 @@
 package me.totalfreedom.totalfreedommod.banning;
 
 import com.google.common.collect.Lists;
-import java.util.List;
-import java.util.UUID;
 import me.totalfreedom.totalfreedommod.config.IConfig;
 import me.totalfreedom.totalfreedommod.util.FLog;
 import org.bukkit.configuration.ConfigurationSection;
 
+import java.util.List;
+import java.util.UUID;
+
 public class IndefiniteBan implements IConfig
 {
+
     private final List<String> ips = Lists.newArrayList();
     private String username = null;
     private UUID uuid = null;
@@ -27,8 +29,7 @@ public class IndefiniteBan implements IConfig
             String strUUID = cs.getString("uuid", null);
             if (strUUID != null)
             {
-                UUID uuid = UUID.fromString(strUUID);
-                this.uuid = uuid;
+                this.uuid = UUID.fromString(strUUID);
             }
         }
         catch (IllegalArgumentException e)

@@ -5,10 +5,6 @@ import com.sk89q.worldguard.protection.flags.Flags;
 import com.sk89q.worldguard.protection.flags.StateFlag;
 import com.sk89q.worldguard.protection.managers.RegionManager;
 import com.sk89q.worldguard.protection.regions.GlobalProtectedRegion;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -23,6 +19,11 @@ import org.bukkit.event.player.PlayerArmorStandManipulateEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class WorldRestrictions extends FreedomService
 {
 
@@ -32,7 +33,7 @@ public class WorldRestrictions extends FreedomService
     private final List<String> BLOCKED_ESSENTIALS_COMMANDS = Arrays.asList(
             "bigtree", "ebigtree", "largetree", "elargetree");
 
-    private final Map<Flag<?>, Object> flags = new HashMap<Flag<?>, Object>()
+    private final Map<Flag<?>, Object> flags = new HashMap<>()
     {{
         put(Flags.PLACE_VEHICLE, StateFlag.State.DENY);
         put(Flags.DESTROY_VEHICLE, StateFlag.State.DENY);
@@ -112,7 +113,7 @@ public class WorldRestrictions extends FreedomService
     {
         if (event.getDamager() instanceof Player)
         {
-            Player player = (Player)event.getDamager();
+            Player player = (Player) event.getDamager();
 
             if (doRestrict(player))
             {

@@ -1,35 +1,14 @@
 package me.totalfreedom.totalfreedommod.fun;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.SplittableRandom;
-import java.util.UUID;
 import me.totalfreedom.totalfreedommod.FreedomService;
 import me.totalfreedom.totalfreedommod.config.ConfigEntry;
 import me.totalfreedom.totalfreedommod.player.FPlayer;
 import me.totalfreedom.totalfreedommod.player.PlayerData;
 import me.totalfreedom.totalfreedommod.shop.ShopItem;
 import me.totalfreedom.totalfreedommod.util.FUtil;
-import org.bukkit.ChatColor;
-import org.bukkit.Color;
-import org.bukkit.FireworkEffect;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.Sound;
-import org.bukkit.SoundCategory;
+import org.bukkit.*;
 import org.bukkit.block.Block;
-import org.bukkit.entity.Arrow;
-import org.bukkit.entity.EnderPearl;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Fireball;
-import org.bukkit.entity.Firework;
-import org.bukkit.entity.LivingEntity;
-import org.bukkit.entity.Player;
-import org.bukkit.entity.Projectile;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.block.Action;
@@ -44,6 +23,8 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
+
+import java.util.*;
 
 public class ItemFun extends FreedomService
 {
@@ -73,7 +54,7 @@ public class ItemFun extends FreedomService
             {
                 cooldownTracker.get(player.getName()).remove(item.getDataName());
             }
-        }.runTaskLater(plugin, seconds * 20);
+        }.runTaskLater(plugin, seconds * 20L);
     }
 
     public boolean onCooldown(Player player, ShopItem item)
@@ -126,7 +107,7 @@ public class ItemFun extends FreedomService
             Location playerLoc = player.getLocation();
             Vector direction = playerLoc.getDirection().normalize();
 
-            LivingEntity livingEntity = (LivingEntity)event.getRightClicked();
+            LivingEntity livingEntity = (LivingEntity) event.getRightClicked();
             EntityType entityType = livingEntity.getType();
             if (!(entityType == fPlayer.mobThrowerCreature()))
             {
@@ -148,7 +129,7 @@ public class ItemFun extends FreedomService
             return;
         }
 
-        Player player = (Player)event.getDamager();
+        Player player = (Player) event.getDamager();
 
         if (!player.getInventory().getItemInMainHand().getType().equals(Material.POTATO))
         {
@@ -247,7 +228,7 @@ public class ItemFun extends FreedomService
             {
                 final int RADIUS_HIT = 5;
                 final int STRENGTH = 4;
-                
+
                 if (plugin.lp.CLOWNFISH_TOGGLE.contains(player.getName()))
                 {
                     player.sendMessage(ChatColor.GRAY + "An admin has disabled your ability to use clownfish.");
@@ -313,7 +294,7 @@ public class ItemFun extends FreedomService
         Projectile entity = event.getEntity();
         if (entity instanceof EnderPearl && entity.getShooter() instanceof Player)
         {
-            Player player = (Player)entity.getShooter();
+            Player player = (Player) entity.getShooter();
             if (plugin.sh.isRealItem(plugin.pl.getData(player), ShopItem.RIDEABLE_PEARL, player.getInventory(), plugin.sh.getRideablePearl()))
             {
                 entity.addPassenger(player);
@@ -328,7 +309,7 @@ public class ItemFun extends FreedomService
         Arrow arrow = null;
         if (entity instanceof Arrow)
         {
-            arrow = (Arrow)entity;
+            arrow = (Arrow) entity;
         }
         //Redundant Player cast is required to avoid suspicious method calls.
         if (arrow != null
@@ -344,7 +325,7 @@ public class ItemFun extends FreedomService
             if (FIRE_BALL_UUIDS.contains(entity.getUniqueId()))
             {
                 FIRE_BALL_UUIDS.remove(entity.getUniqueId());
-                Firework firework = (Firework)entity.getWorld().spawnEntity(entity.getLocation(), EntityType.FIREWORK);
+                Firework firework = (Firework) entity.getWorld().spawnEntity(entity.getLocation(), EntityType.FIREWORK);
                 firework.setSilent(true);
                 FireworkMeta meta = firework.getFireworkMeta();
                 FireworkEffect explosionEffect = FireworkEffect.builder().withColor(Color.ORANGE).withFade(Color.YELLOW).with(FireworkEffect.Type.BALL_LARGE).trail(true).build();

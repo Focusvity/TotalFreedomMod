@@ -222,11 +222,12 @@ public class CoreProtectBridge extends FreedomService
             String database = ConfigEntry.COREPROTECT_MYSQL_DATABASE.getString();
             String url = host + ":" + port + "/" + database + "?user=" + username + "&password=" + password + "&useSSL=false";
             connection = DriverManager.getConnection("jdbc:sql://" + url);
-            final Statement statement = connection.createStatement();
+            final PreparedStatement statement = connection.prepareStatement("SELECT id FROM co_world WHERE world = ?");
             statement.setQueryTimeout(30);
 
             // Obtain world ID from CoreProtect database
-            ResultSet resultSet = statement.executeQuery("SELECT id FROM co_world WHERE world = '" + world.getName() + "'");
+            statement.setString(1, world.getName());
+            ResultSet resultSet = statement.executeQuery();
             String worldID = null;
             while (resultSet.next())
             {
@@ -244,7 +245,10 @@ public class CoreProtectBridge extends FreedomService
             // Iterate through each table and delete their data if the world ID matches
             for (String table : tables)
             {
-                statement.executeQuery("DELETE FROM " + table + " WHERE wid = " + worldID);
+                final PreparedStatement statement1 = connection.prepareStatement("DELETE FROM ? WHERE wid = ?");
+                statement1.setString(1, table);
+                statement1.setString(2, worldID);
+                statement1.executeQuery();
             }
 
             connection.close();

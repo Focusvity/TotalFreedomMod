@@ -42,7 +42,7 @@ public class Command_op extends FreedomCommand
                     matchedPlayerNames.add(player.getName());
                     player.setOp(true);
                     player.sendMessage(FreedomCommand.YOU_ARE_OP);
-                    plugin.pem.setPermissions(player);
+                    plugin.rm.updateDisplay(player);
                 }
             }
         }

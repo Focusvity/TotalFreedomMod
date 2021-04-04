@@ -164,7 +164,7 @@ public class Ban
 
     public boolean isExpired()
     {
-        return hasExpiry() && expiryUnix < FUtil.getUnixTime();
+        return hasExpiry() && FUtil.getUnixDate(expiryUnix).before(new Date(FUtil.getUnixTime()));
     }
 
     public String bakeKickMessage()
